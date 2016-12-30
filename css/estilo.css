@@ -1,0 +1,970 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,600');
+body {
+    font-size: 100%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    color: rgb(106, 106, 106);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.4em;
+    margin: 0 5%;
+    padding: 1.5rem 0;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 1.2em;
+    color: rgb(89, 89, 89);
+    text-transform: uppercase;
+    margin: 0 5%;
+}
+
+h2 {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    color: rgb(89, 89, 89);
+    margin: 0 5%;
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(89, 89, 89);
+    margin: 0 5%;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+
+/*==================== Header ====================*/
+
+.cabecalho-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 3.5rem;
+    background-color: rgb(255, 255, 255);
+    -webkit-box-shadow: rgba(69, 69, 69, .3) 0px 0px 2px;
+    box-shadow: rgba(69, 69, 69, .3) 0px 0px 2px;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    z-index: 4;
+}
+
+.cabecalho-desktop {
+    display: none;
+}
+
+.logo {
+    background: url('../img/logo/logo-dark.svg') no-repeat center center;
+    width: 8.3rem;
+    height: 1.9rem;
+    margin-left: 5vw;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.hamburger {
+    padding: .6rem;
+    margin-right: 4vw;
+}
+
+.hamburger .linha {
+    width: 2.2rem;
+    height: 2px;
+    background-color: rgb(0, 161, 228);
+    margin-bottom: .5rem;
+}
+
+.hamburger .linha:last-child {
+    margin-bottom: 0px;
+}
+
+.hamburger-close {
+    position: absolute;
+    padding: .6rem;
+    top: 1rem;
+    right: 4vw;
+    z-index: 8;
+}
+
+.linhaa,
+.linhab {
+    width: 2.2rem;
+    height: 2px;
+    background-color: rgb(180, 177, 177);
+}
+
+.hamburger-close .linhaa {
+    margin-top: 2px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.hamburger-close .linhab {
+    margin-top: -2px;
+    -webkit-transform: rotate(315deg);
+    transform: rotate(315deg);
+}
+
+.menu-mobile {
+    position: fixed;
+    left: -100vw;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(255, 255, 255);
+    transition: all .6s;
+    -webkit-transition: all .6s;
+    opacity: .3;
+    z-index: 7;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.menu-mobile ul {
+    padding: 0;
+    margin: 0;
+}
+
+.menu-mobile ul li {
+    height: 45px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.menu-mobile a {
+    font-weight: 700;
+    font-size: 1.8em;
+    color: rgb(89, 89, 89);
+}
+
+nav ul li a.active,
+.fixar nav ul li a.active {
+    color: rgb(0, 161, 228);
+}
+
+
+/*======================= Diversos ======================*/
+
+#filtro {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(69, 69, 69, 0.0);
+    -webkit-transition: all .4s;
+    transition: all .4s;
+    z-index: 2;
+}
+
+main > section {
+    padding: 4rem 0;
+}
+
+main section:first-child {
+    padding: 0;
+}
+
+#download,
+#time,
+#etapas {
+    background-color: rgb(246, 246, 246);
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6rem;
+    padding: 0 2rem;
+    height: 2.8rem;
+    margin: auto;
+    border: none;
+    border-radius: 4px;
+    background: rgb(0, 161, 228);
+    color: rgb(255,255, 255);
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    font-weight: 600;
+    letter-spacing: .2em;
+    font-size: .8em;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+}
+
+.btn:hover {
+    background: rgb(255,255, 255);
+    color: rgb(0, 161, 228);
+}
+
+/*===================== Home =======================*/
+
+#home {
+    background: url("../img/bg/rio.jpg") no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#home .btn {
+    margin: 0;
+    background: none;
+    border: solid 1px white;
+}
+
+#home .btn:hover {
+    background: rgb(0, 161, 228);
+    border: solid 1px rgb(0, 161, 228);
+}
+
+#home #screen {
+    width: 90%;
+    height: 60%;
+    background: url("../img/bg/capa.png") no-repeat center center; 
+    background-size: cover;
+}
+
+/*==================== Download =======================*/
+
+#download img {
+    width: 10rem;
+}
+
+/*==================== Como funciona o APP? =======================*/
+
+#como-funciona {
+    padding-bottom: 0;
+}
+
+#intro,
+#etapas,
+#solicitando-e-viajando {
+    padding: 3rem 0;
+}
+
+#intro img {
+    width: 8rem;
+}
+
+#etapas img {
+    width: 4rem;
+    height: 4rem;
+    margin: 1.5rem;
+}
+
+#etapas .seta {
+    width: 2rem;
+    height: 2.5rem;
+    background: url("../img/assets/etapas/seta-baixo.svg") no-repeat center center;
+    background-size: 100%;
+    margin: 3rem auto 1rem;
+}
+
+#solicitando-e-viajando {
+    background: url("../img/bg/paises.svg") no-repeat bottom;
+    background-size: 100%;
+}
+
+#solicitando-e-viajando h2 {
+    padding: 1rem;
+}
+
+#solicitando-e-viajando ol {
+    padding-right: 5%;
+}
+
+#solicitando-e-viajando img {
+    width: 4rem;
+    height: 4rem;
+    margin: 1rem;
+}
+
+/*================== Newsletters  ====================*/
+
+#newsletters {    
+    background: url("../img/bg/paris.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+#newsletters h1,
+#newsletters p {
+color: rgb(255, 255, 255);
+}
+
+input {
+    font-size: 1rem;
+    width: 90%;
+    height: 2.8rem;
+    margin: 0 5%;
+    border: none;
+    border: solid 2px rgb(255, 255, 255);
+    border-radius: 2px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    padding-left: .7rem;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+}
+
+input:focus {
+    outline: 0;
+    border-bottom: 1px solid rgb(0, 161, 228);
+    background-color: rgb(255, 255, 255);
+    box-shadow: none;
+}
+
+[placeholder] {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    padding-left: .7rem;
+    color: rgb(111, 111, 111);
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    color: rgb(177, 177, 177);
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    color: rgb(177, 177, 177);
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+   font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    color: rgb(177, 177, 177);
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    color: rgb(177, 177, 177);
+}
+
+form .btn {
+    width: 90%;
+    margin: .8rem auto;
+}
+
+/*================== Time  ====================*/
+
+#time h1 {
+    padding-bottom: 3rem;
+}
+
+#time .card {
+    width: 90%;
+    margin: .5rem auto;
+    background: rgb(255, 255, 255);
+    -webkit-box-shadow: rgba(69, 69, 69, .3) 0px 0px 2px;
+    box-shadow: rgba(69, 69, 69, .3) 0px 0px 2px;
+    padding: 2rem 0;
+}
+
+.card img {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    margin: 1rem auto;
+    -webkit-filter: saturate(.5);
+    filter: saturate(.3);
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.card:hover img {
+    -webkit-filter: saturate(1);
+    filter: saturate(1);
+}
+
+.card h3,
+.card .redes-sociais {
+    padding: 1rem 0;
+}
+
+.behance,
+.github,
+.facebook {
+    padding: 0;
+    display: inline-flex;
+    width: 2.8rem;
+    height: 2.8rem;
+    margin: .2rem;
+    border: solid 1px rgb(246, 246, 246);
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.behance:hover,
+.github:hover,
+.facebook:hover,
+.behance:focus,
+.github:focus,
+.facebook:focus {
+    border: solid 1px rgb(106, 106, 106);
+}
+
+.behance {
+    background: url('../img/redes-sociais/behance.svg') no-repeat center center;
+    width: 2.8rem;
+    height: 2.8rem;
+}
+
+.github {
+    background: url('../img/redes-sociais/github.svg') no-repeat center center;
+    width: 2.8rem;
+    height: 2.8rem;
+}
+
+.facebook {
+    background: url('../img/redes-sociais/facebook.svg') no-repeat center center;
+    width: 2.8rem;
+    height: 2.8rem;
+}
+
+/*====================== Banner ======================*/
+
+#banner {
+    background: url("../img/bg/viajante.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+#banner h1,
+#banner p,
+#faq-banner h1,
+#faq-banner p {
+    color: white;
+}
+
+/*====================== Footer ======================*/
+
+footer {
+    background: rgb(89, 89, 89);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+footer a {
+    font-size: 1em;
+    font-weight: 600;
+    color: white;
+    margin-left: .4rem;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    display: inline-flex;
+}
+
+#redes ul {
+    margin: 0;
+}
+
+.face,
+.twitter,
+.instagram {
+    padding: 0;
+    display: inline-flex;
+    width: 2.8rem;
+    height: 2.8rem;
+    margin: .2rem;
+    border: solid 1px #6a6a6a;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.face:hover,
+.twitter:hover,
+.instagram:hover,
+.face:focus,
+.twitter:focus,
+.instagram:focus {
+    border: 1px solid white;
+}
+
+.twitter {
+    background: url('../img/redes-sociais/twitter.svg') no-repeat center center;
+    background-size: 60%;
+}
+
+.face {
+    background: url('../img/redes-sociais/face.svg') no-repeat center center;
+    background-size: 60%;
+}
+
+.instagram {
+    background: url('../img/redes-sociais/instagram.svg') no-repeat center center;
+    background-size: 60%;
+}
+
+#links-uteis ul {
+    margin-bottom: 0
+}
+
+#links-uteis a {
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+#links-uteis a:hover {
+    color: rgb(0, 161, 228);
+}
+
+#links-uteis spam {
+    color: white;
+    font-weight: 600;
+    margin-left: .4em;
+}
+
+/*====================== FAQ  ======================*/
+
+@import url('https://fonts.googleapis.com/css?family=Bitter:400');
+
+#solicitante,
+#viajante {
+    padding: 2rem 0;
+}
+
+#viajante {
+    padding-bottom: 5rem;
+}
+
+#home h1{
+    font-family: "Bitter", serif;
+    font-weight: 400;
+    font-size: 1.6rem;  
+    color: white;
+    margin-bottom: 1rem;
+}
+
+#home h2{
+    font-size: 1em;
+    text-transform: none;
+    color: white;
+}
+
+#home.home-faq {
+    background: url("../img/bg/viajante.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+#solicitante img,
+#viajante img {
+    margin: 2rem auto 1rem;
+}
+
+#solicitante h2,
+#viajante h2 {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+#solicitante .container {
+    border-top: solid 4px rgb(191, 206, 47);
+}
+
+#viajante .container {
+    border-top: solid 4px rgb(0, 161, 228);
+}
+
+#viajante .titulo,
+#solicitante .titulo {
+    background: rgb(251,250,250);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10%;
+}
+
+#viajante h3,
+#solicitante h3  {
+    padding: 1rem;
+    width: 100%;
+}
+
+#viajante .container > div,
+#solicitante .container > div{
+    border-bottom: solid 2px rgb(239, 239, 239);
+}
+
+.expand {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+.mais,
+.menos {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    border: 1px solid rgb(239, 239, 239);
+}
+
+.menos {
+    display: none;
+}
+
+.linha-vert,
+.linha-hor {
+    background: rgb(106, 106, 106);
+    position: absolute;
+}
+
+.linha-vert {
+    width: 2px;
+    height: 1rem;
+}
+
+.linha-hor {
+    width: 1rem;
+    height: 2px;
+}
+
+.conteudo {
+    max-height: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    opacity: 0;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    background: rgb(247, 246, 246);
+}
+
+.conteudo p {
+    padding: 0 1rem 2.5rem;
+}
+
+#faq-banner {
+    background: url("../img/bg/london.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+/*====================== Brackpoints ======================*/
+
+@media screen and (max-height: 360px) {
+    .menu-mobile ul li {
+        height: 2rem;
+    }
+    .menu-mobile ul li a {
+        font-size: 1.4em;
+    }
+    #home .btn {
+        display: none;
+    }
+    #home #screen {
+        height: 80vh;
+        width: 80vh;
+    }
+    #home.home-faq {
+        justify-content: center;
+        padding-top: 1rem;
+    }
+    #home.home-faq #screen {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 480px) {    
+    #time .container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    #time .card {
+        width: 46%;
+    }
+    #home.home-faq h1 {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (min-width: 640px) {    
+    #home #screen {
+        height: 70vh;
+        width: 70vh;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #intro p {
+    text-align: justify;
+    }    
+    #intro img {
+        width: 15rem;
+        height: 15rem;
+        margin: 2rem;
+    }
+    #intro > div {
+        display: inline-flex;       
+        align-items: center;
+    }    
+    #intro .inverso {
+        flex-direction: row-reverse;
+    }
+    #como-funciona #etapas {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 0;
+    }
+    #como-funciona #etapas div {
+        max-width: 15rem;
+        margin: 0;
+    }
+    #etapas .seta {
+        background: url("../img/assets/etapas/seta.svg") no-repeat center center;
+        background-size: 100%;
+    }
+    #solicitando-e-viajando ol{
+        width: 80%;
+        margin: auto;
+        text-align: justify;   
+        padding-bottom: 2rem;
+    }
+    form {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+    }
+    #formulario  input {
+        width: 60%
+    }
+    #formulario  button {
+        width: 30%
+    }
+    #formulario input,
+    #formulario button {
+        margin: .5rem;
+    }
+    #time .card {
+        width: 30%;
+        margin: .5rem;
+    }
+    #viajante .container,
+    #solicitante .container {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .cabecalho-mobile {
+        display: none;
+    }
+    .cabecalho-desktop {
+        position: fixed;
+        display: flex;
+        align-items: flex-end;
+        width: 100%;
+        height: 8rem;
+        transition: all .7s;
+        -webkit-transition: all .7s;
+        z-index: 2;
+    }
+    .logo {
+        background: url("../img/logo/logo.svg") no-repeat center center;
+        position: absolute;
+        bottom: 0;
+        left: 5%;
+        height: 4rem;
+        cursor: pointer;
+        transition: all .3s;
+        -webkit-transition: all .3s;
+    }
+    .menu-desktop {
+        position: absolute;
+        right: 10%;
+        bottom: 0;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+         transition: all .3s;
+        -webkit-transition: all .3s;
+    }
+    .menu-desktop ul li {
+        display: inline-block;
+        margin: 0 .5rem;
+    }
+    .menu-desktop a {
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: .8em;
+        color: rgb(255, 255, 255);
+        transition: all .3s;
+        -webkit-transition: all .3s;
+    }
+    .menu-desktop a:hover {
+        color: rgb(0, 161, 228);
+    }   
+    .fixar {
+        background: rgb(255, 255, 255);
+        -webkit-box-shadow: rgba(69, 69, 69, .3) 0px 0px 2px;
+        box-shadow: rgba(69, 69, 69, .3) 0px 0px 2px;
+        height: 4rem;
+    }
+    .fixar .menu-desktop a {
+        color: rgb(89, 89, 89)
+    }
+    .fixar .menu-desktop a:hover {
+        color: rgb(0, 161, 228);
+    }
+    .fixar .logo {
+        background: url('../img/logo/logo-dark.svg') no-repeat center center;
+    }
+    main > section {
+        padding: 5rem 0;
+    }
+    main section:first-child {
+        padding: 0;
+    }
+    #home .btn {
+        display: none;
+    }
+    #home #screen {
+    width: 90vw;
+    height: 60vh;
+    background: url("../img/bg/capa2.png") no-repeat; 
+    background-size: 100%;
+    }
+    #solicitando-e-viajando h2 {
+        margin-bottom: 2rem;
+    }
+    #solicitando-e-viajando ol{
+        width: 60%;
+    }
+    #newsletters form {
+        width: 40rem;
+        margin: auto;
+    }
+    #time .card {
+        width: 14.5rem;
+    }
+    footer {
+        align-content: center;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 10%;
+    }
+    #links-uteis {
+        padding-bottom: .8rem;
+    }
+    #home.home-faq {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    #home.home-faq .texto {
+        margin: 4rem 0 0 10%;
+        padding: 0;
+        text-align: left;
+    }   
+    #home.home-faq .texto {
+        margin: 4rem 0 0 10%;
+        padding: 0;
+        text-align: left;
+    }
+    #home.home-faq .texto h1,
+    #home.home-faq .texto h2{
+        padding: 0;
+        margin: 1rem 0;
+    }
+    #home.home-faq .texto h1 {
+        font-size: 4rem;
+    }
+    #home.home-faq .texto h2 {
+        font-size: 1.3rem;
+    }
+    #home.home-faq #screen {
+        position: absolute;
+        bottom: -4rem;
+        right: 7%;
+        width: 30%;
+        height: 100%;
+        background: url("../img/bg/login.png") no-repeat bottom; 
+        background-size: 100%;
+    }
+
+@media screen and (min-width: 1200px) {
+    #home #screen {
+        width: 60vw;
+    } 
+    #intro {
+        width: 70%;
+        margin: auto;
+    }
+    #time .container {
+        width: 80%;
+        margin: auto;
+    }
+    #viajante .container,
+    #solicitante .container{
+        width: 60%;
+        margin: auto;
+    }
+    #home.home-faq #screen {
+        position: absolute;
+        bottom: -4rem;
+        right: 6%;
+        width: 30%;
+        height: 100%;
+        background: url("../img/bg/login.png") no-repeat bottom; 
+        background-size: 90%;
+}
